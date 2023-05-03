@@ -1,0 +1,108 @@
+
+/* Using font Fira Sans | PT Serif from Google */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:800|PT+Serif:400");
+
+.login-main {
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+  width: 40%;
+  max-width: 500px;
+  height: 100%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  padding-bottom: 10%;
+  background-color: #fff;
+}
+
+.login-sub-main {
+  display: block;
+  justify-content: center;
+  box-shadow: 7px 12px 13px 12px rgb(207, 207, 207);
+  padding-top: 30px;
+  padding-bottom: 25px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.login-imgs {
+  padding-top: 20px;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+  }
+
+.credential-field {
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 5px 0px rgba(30, 53, 113, 0.55);
+  border-color: rgba(0, 0, 0, .5);
+  background-color: #fff;
+  padding-left: 28px;
+  font-size: 15px;
+  width: 50%;
+  overflow: hidden;
+}
+
+.credential-icon {
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  padding: 12px 0 0 5px;
+}
+
+.login-first-input {
+  width: 100%;
+  overflow: hidden;
+}
+
+.login-second-input {
+  width: 100%;
+  padding-top: 12px;
+  overflow: hidden;
+}
+
+.login-third-input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  overflow: hidden;
+}
+
+button.login-button {
+  width: 50%;
+  max-width: 200px;
+  height: 10%;
+  border-radius: 20px;
+  background-color:rgba(30, 53, 113, 0.55);
+  color: black;
+  font-size: 20px;
+  border: none;
+}
+
+button.login-button:hover {
+  background-color:rgba(30, 53, 113, 1);
+}
+
+button.login-button:active {
+  background-color: white;
+}
+
+.login-button-container {
+  margin-top: 25px;
+}
+
+.login-link-container {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.login-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.login-logo {
+  width: 100%;
+}
