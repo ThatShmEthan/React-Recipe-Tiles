@@ -1,0 +1,35 @@
+{
+  "recipedata": 
+  [
+    { 
+      "id": 100000001, 
+      "name": "Example Recipe 1", 
+      "thumbnail": "/images/000000001.png", 
+      "image": "/images/000000001.png", 
+      "description": "No Description Yet", 
+      "ingredients": ["Chicken", "Bread", "Beef"], 
+      "instructions": "No Instructions Yet",
+      "allergens": [],
+      "utensils": [],
+      "cookTime": [1, 0],
+      "prepTime": [0, 20],
+      "serves": 1,
+      "rating": "80%"
+    }, 
+    { 
+      "id": 100000002, 
+      "name": "Example Recipe 2", 
+      "thumbnail": "/images/000000002.jpg", 
+      "image": "/images/000000002.jpg", 
+      "description": "No Description Yet", 
+      "ingredients": [], 
+      "instructions": "No Instructions Yet",
+      "allergens": [],
+      "utensils": [],
+      "cookTime": [1, 0],
+      "prepTime": [0, 20],
+      "serves": 2, 
+      "rating": "60%"
+    }
+  ]
+}
