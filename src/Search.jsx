@@ -5,20 +5,15 @@ import RecipeTiles from './components/RecipeTiles'
 import AddRecipe from './components/AddRecipe'
 
 export default function Search() {
-  return (
-    <>
-      <AddRecipe></AddRecipe>
+    return (
+        <>
+            <AddRecipe></AddRecipe>
+            <HomeHeader></HomeHeader>
+            <Sidebar activePage="Search"></Sidebar>
 
-      <HomeHeader></HomeHeader>
-
-      <Sidebar activePage="Search"></Sidebar>
-
-      <div id="main-container" className="main-container">
-
-        <RecipeTiles/>
-
-      </div>
-
-    </>
-  )
+            <div id="main-container" className="main-container">
+                <RecipeTiles />
+            </div>
+        </>
+    );
 }

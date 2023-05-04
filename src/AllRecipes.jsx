@@ -5,20 +5,15 @@ import RecipeTiles from './components/RecipeTiles'
 import AddRecipe from './components/AddRecipe'
 
 export default function AllRecipes() {
-  return (
-    <>
-      <AddRecipe></AddRecipe>
-      
-      <HomeHeader></HomeHeader>
+    return (
+        <>
+            <AddRecipe></AddRecipe>
+            <HomeHeader></HomeHeader>
+            <Sidebar activePage="All Recipes"></Sidebar>
 
-      <Sidebar activePage="All Recipes"></Sidebar>
-
-      <div id="main-container" className="main-container">
-
-        <RecipeTiles/>
-
-      </div>
-
-    </>
-  )
+            <div id="main-container" className="main-container">
+                <RecipeTiles/>
+            </div>
+        </>
+    );
 }
