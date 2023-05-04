@@ -1,40 +1,44 @@
 
-export default function ExtendedSidebar()
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+
+export default function ExtendedSidebar(props)
   {
     return (<div id="sidebar" className="extended-sidebar">
       <div className="sidebar-logo">
         <p className="logo-text">ReciPls</p>
       </div>
 
-  <a id="home-anchor" className="sidebar-link" href="/home.html">
-      <button id="home-button" className={"sidebar-button" || ((props.activePage.toLowerCase() == "home") && "sidebar-button currentPage")}>Home</button>
-    </a>
+  <Link id="home-anchor" className="sidebar-link" to="/">
+      <button id="home-button" className={((props.activePage.toLowerCase() == "home") && "sidebar-button current-page") || "sidebar-button"}>Home</button>
+    </Link>
 
-    <a id="all-recipes-anchor" className="sidebar-link" href="/all-recipes.html">
-      <button id="all-recipes-button" className={"sidebar-button" || ((props.activePage.toLowerCase() == "all recipes") && "sidebar-button currentPage")}>All Recipes</button>
-    </a>
+    <Link id="all-recipes-anchor" className="sidebar-link" to="/all-recipes">
+      <button id="all-recipes-button" className={((props.activePage.toLowerCase() == "all recipes") && "sidebar-button current-page") || "sidebar-button"}>All Recipes</button>
+    </Link>
 
-    <a id="saved-recipes-anchor" className="sidebar-link" href="/saved-recipes.html">
-      <button id="saved-recipes-button" className={"sidebar-button" || ((props.activePage.toLowerCase() == "saved recipes") && "sidebar-button currentPage")}>Saved Recipes</button>
-    </a>
+    <Link id="saved-recipes-anchor" className="sidebar-link" to="/saved-recipes">
+      <button id="saved-recipes-button" className={((props.activePage.toLowerCase() == "saved recipes") && "sidebar-button current-page") || "sidebar-button"}>Saved Recipes</button>
+    </Link>
 
-    <a id="your-recipes-anchor" className="sidebar-link" href="/your-recipes.html">
-      <button id="your-recipes-button" className={"sidebar-button" || ((props.activePage.toLowerCase() == "your recipes") && "sidebar-button currentPage")}>Your Recipes</button>
-    </a>
+    <Link id="your-recipes-anchor" className="sidebar-link" to="/your-recipes">
+      <button id="your-recipes-button" className={((props.activePage.toLowerCase() == "your recipes") && "sidebar-button current-page") || "sidebar-button"}>Your Recipes</button>
+    </Link>
 
   <span id="add-recipe-anchor" className="sidebar-link">
     <button id="add-recipe-button" className="sidebar-button" onClick={ (addR) => addRecipePanel(addR.target)}>Add Recipe</button>
   </span>
 
   <div id="search-container" className="sidebar-search-container">
-    <button id="filter" className="search-filter" onClick={showFilters()}>
+    <button id="filter" className="search-filter" onClick={ () => showFilters()}>
       <p>Filter</p>
     </button>
     <input type="search" id="search-box" className="search-box" placeholder="Search..."></input>
+    <Link id="search-anchor" to="/search">
     <button id="search-button" className="search-button"
-      onClick={() => search(encodeURIComponent(document.getElementById('search-box').value).replace('%20', '+'))}>
+      /*onClick={() => search(encodeURIComponent(document.getElementById('search-box').value).replace('%20', '+'))}*/>
       <p>🔍</p>
     </button>
+  </Link>
     <div id="filter-dropdown" style={{ display: "none" }}>
       <div></div>
     </div>

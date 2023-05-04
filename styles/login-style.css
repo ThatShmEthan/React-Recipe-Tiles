@@ -69,7 +69,7 @@
   overflow: hidden;
 }
 
-button.login-button {
+.login-button {
   width: 50%;
   max-width: 200px;
   height: 10%;

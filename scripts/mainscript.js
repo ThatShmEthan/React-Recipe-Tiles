@@ -5,6 +5,14 @@ var recipeLink = "recipe.html";
 
 document.getElementsByTagName('body').onload = cookieTimerIntervalStart();
 
+// Initialization Function
+function reciPlsInit() {
+  cookieTimerIntervalStart();
+  if(!getCookie('username')){
+    
+  }
+}
+
 // Used to search for recipes
 function search(query, filters = "") {
   document.location.href = siteLink + searchLink + "?q=" + query + "&f=" + filters;
@@ -12,7 +20,7 @@ function search(query, filters = "") {
 
 // Used to show the filter
 function showFilters() {
-  blockDisplayToggle(document.getElementById('filter-dropdown'));
+    blockDisplayToggle(document.getElementById('filter-dropdown'));
 }
 
 // Used to redirect on clicking recipe tiles
@@ -111,7 +119,7 @@ function checkCookieTimerDone() {
 
 // Updates display timer using Cookie Timer
 function updatePageTimer() {
-  if (getCookie("reciPlsTimerOn") == '0') {
+  if (getCookie("reciPlsTimerOn") == '0' || !document.getElementById("timer-seconds")) {
     return;
   }
   var displaySeconds = document.getElementById("timer-seconds");
@@ -204,6 +212,14 @@ function closeAddRecipePanel() {
 }
 
 // THE FUNCTIONS BELOW REQUIRE SQL OR API CONNECTION
+
+function deleteRecipe(id, name = "a recipe") {
+  if(window.confirm('You are about to delete ' + name + '. Please confirm your choice by pressing Ok to confirm or press Cancel to cancel the delete.')) {
+    console.log('Recipe ' + id + ' Deleted');
+  } else {
+    console.log('Delete Cancelled.');
+  }
+}
 
 function uploadRecipe(id = 0) {
   if (getCookie('username') && checkCredentials()) {

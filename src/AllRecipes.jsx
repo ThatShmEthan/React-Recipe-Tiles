@@ -1,7 +1,8 @@
 
 import Sidebar from './components/Sidebar'
-import HomeHeader from './components/HomeHeader.jsx'
+import HomeHeader from './components/HomeHeader'
 import RecipeTiles from './components/RecipeTiles'
+import AddRecipe from './components/AddRecipe'
 
 export default function AllRecipes() {
   return (

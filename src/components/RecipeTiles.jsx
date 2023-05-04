@@ -27,7 +27,7 @@ export default function RecipeTiles(props) {
         ));
         isLoading(false);
       });
-    return (<div>Loading</div>);
+    return (<div>Loading...</div>);
   }
 
   return (

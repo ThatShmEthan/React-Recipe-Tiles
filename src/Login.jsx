@@ -1,4 +1,6 @@
+
 import '/styles/login-style.css';
+import { BrowserRouter, Route, Link, useParams } from 'react-router-dom'
 
 export default function Login() {
   return (
@@ -27,7 +29,7 @@ export default function Login() {
           </div>
            
             <div className="login-link-container">
-              <a href="#" className="login-link">Sign Up</a>
+              <Link to="/signup" className="login-link">Sign Up</Link>
             </div>
            
  
