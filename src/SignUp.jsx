@@ -27,7 +27,7 @@ export default function SignUp() {
                     </div>
                     <div className="login-button-container">
                         <button className="login-button" onClick={
-                            () => signup(document.getElementById('username-input').value, document.getElementById('password-input').value, document.getElementById('password-input-2').value) && redirect('/')
+                            () => signup(document.getElementById('username-input').value, document.getElementById('password-input').value, document.getElementById('password-input-2').value) && (document.location.href = '/')
                         }>Sign Up</button>
                     </div>
                     <div className="login-link-container">

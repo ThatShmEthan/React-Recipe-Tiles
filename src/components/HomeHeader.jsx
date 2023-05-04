@@ -25,13 +25,25 @@ export default function HomeHeader(props) {
                 </div>
             </div>
             <div className='header-login-container'>
-                <img className="header-login-icon" src="/images/person-icon.png" onClick = { () => showLoginMenu() }
-                    style={{
-                        cursor: 'pointer',
-                        display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'none')) || 'block')
-                    }}></img>
+                <img className="header-login-icon" src="/images/person-icon.png" onClick = { () => showLoginMenu() } style={{ cursor: 'pointer' }}></img>
                 <div id="header-login-dropdown" style={{ display: 'none' }}>
-                    <Link className="signup-icon-link" to="/signup"></Link>
+                    <p id='header-login-menu-name' style = {{ display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'none')) || 'block') }}>Anonymous</p>
+                    <div id="header-login-links" style = {{ display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'none')) || 'block') }}>
+                        <Link className="signup-icon-link" to="/login">
+                            <button style={{ float: 'left', marginTop: '30%' }} className="login-button header-login-menu-button">Log In</button>
+                        </Link>
+                        <Link className="signup-icon-link" to="/signup">
+                            <button style={{ float: 'left', marginTop: '15%' }} className="login-button header-login-menu-button">Sign Up</button>
+                        </Link>
+                    </div>
+                    <h1 style={{ display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'block')) || 'none'), marginTop: '50%' }}>{ getCookie('username') }</h1>
+                    <Link className="signup-icon-link" to="/login">
+                        <button style={{
+                            display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'block')) || 'none'), marginTop: '50%'
+                        }} className="login-button header-login-menu-button" onClick = { () => logout() }>
+                            Log Out
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

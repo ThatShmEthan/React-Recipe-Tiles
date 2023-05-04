@@ -755,8 +755,8 @@ p.recipe-interface-label {
     width: 50px;
     border-radius: 50%;
     background-color: var(--highlight-color);
-    margin-top: 2%;
-    right: 2%;
+    top: 50px;
+    right: 67px;
     position: absolute;
 }
 
@@ -766,9 +766,24 @@ p.recipe-interface-label {
 }
 
 #header-login-dropdown {
-    float: right;
-    height: 100%;
-    width: 100%;
-    background-color: red;
+    height: 250px;
+    width: 150px;
+    margin-top: 48px;
+    background-color: var(--highlight-color);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px solid var(--main-outline-color);
+    margin-right: 15px;
 }
+
+#header-login-menu-name {
+    margin-top: 50%;
+    font-weight: 700;
+}
+
+.login-button.header-login-menu-button {
+    margin-left: 25%;
+    font-size: 15px;
+}
+
 

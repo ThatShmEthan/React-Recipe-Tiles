@@ -252,7 +252,7 @@ function uploadRecipe(id = 0) {
 
 // THE BELOW FUNCTIONS ARE LOGIN FUNCTIONALITY. NEEDS SQL CONNECTION.
 function login(username, password) {
-    if (validateLogin()) {
+    if (validateLogin(username, password)) {
         setCookie('username', username, 2600000);
         setCookie('password', password, 2600000);
         return true;
@@ -283,9 +283,7 @@ function signup(username, pass1, pass2) {
     }
 }
 
-function validateLogin() {
-    username = getCookie('username');
-    password = getCookie('password');
+function validateLogin(username = getCookie('username'), password = getCookie('password')) {
     if (username && password) { // SQL HERE, SEND INFO TO SERVER, HANDLE RETURN VALUE
         return true;
     } else {
