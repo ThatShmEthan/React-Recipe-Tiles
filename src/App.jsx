@@ -1,14 +1,7 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react'
-import Home from './Home'
-import Search from './Search'
-import AllRecipes from './AllRecipes'
-import RecipePage from './RecipePage'
-import SavedRecipes from './SavedRecipes'
-import YourRecipes from './YourRecipes'
-import Login from './Login'
-import SignUp from './SignUp'
+import { Home, Search, AllRecipes, RecipePage, SavedRecipes, YourRecipes, Login, SignUp } from './allcomponents'
 
 export default function App(props) {
     return (

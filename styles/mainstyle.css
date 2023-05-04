@@ -27,7 +27,7 @@ body {
   background: var(--background-color);
   color: var(--main-text-color);
   text-align: center;
-  font-size: 20;
+  /* font-size: 15px; */
 }
 
 /* Override default button style */
@@ -80,13 +80,33 @@ textarea:focus {
   box-shadow: 1px 1px 5px var(--main-outline-color);
 }
 
-#recipes.half-block {
-  width: 50%;
-  padding-right: 5%;
+#your-recipes.half-block.home-column {
+  width: 45%;
 }
 
-#your-recipes.half-block {
-  width: 45%;
+#recipes.half-block.home-column {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.half-block.home-column {
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-theme-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+        background: var(--main-theme-color);
 }
 
 .centered-holder-80p {
@@ -103,7 +123,9 @@ textarea:focus {
   height: 20%;
   width: 100%;
   background: var(--main-theme-color);
-  box-shadow: 2px 2px 10px var(--main-outline-color);
+  box-shadow: 2px 2px 3px var(--main-outline-color);
+  outline: 2px solid var(--main-outline-color);
+  z-index: 7;
 }
 
 .sidebar {
@@ -138,7 +160,7 @@ textarea:focus {
   max-width: 650px;
   width: 100%;
   min-width: 200px;
-  font-size: 10;
+  /* font-size: 10px; */
   background: var(--main-theme-color);
   color: var(--main-text-color);
   outline: var(--main-outline-color) solid 2px;
@@ -593,7 +615,7 @@ p.recipe-interface-label {
   max-width: 400px;
   width: 100%;
   min-width: 200px;
-  font-size: 10;
+  /* font-size: 10px; */
   background: var(--main-theme-color);
   color: var(--main-text-color);
   outline: var(--main-outline-color) solid 2px;
@@ -687,10 +709,6 @@ p.recipe-interface-label {
   height: 100%;
   margin: 0 0 0 0;
   resize: none;
-}
-
-#recipes.half-block.home-column {
-  overflow: hidden;
 }
 
 .add-recipe-upload {

@@ -1,7 +1,6 @@
 
 import { BrowserRouter, useParams } from 'react-router-dom'
-import ExtendedSidebar from './components/ExtendedSidebar'
-import AddRecipe from './components/AddRecipe'
+import { ExtendedSidebar, AddRecipe } from './allcomponents'
 
 export default function RecipePage(props) {
     var { id } = useParams();

@@ -1,8 +1,9 @@
 {
   "recipedata": 
   [
-    { 
+    {
       "id": 100000001, 
+      "chef":  "User",
       "name": "Example Recipe 1", 
       "thumbnail": "/images/000000001.png", 
       "image": "/images/000000001.png", 
@@ -16,8 +17,9 @@
       "serves": 1,
       "rating": "80%"
     }, 
-    { 
-      "id": 100000002, 
+    {
+      "id": 100000002,
+      "chef":  "User",
       "name": "Example Recipe 2", 
       "thumbnail": "/images/000000002.jpg", 
       "image": "/images/000000002.jpg", 

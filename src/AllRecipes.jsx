@@ -1,8 +1,5 @@
 
-import Sidebar from './components/Sidebar'
-import HomeHeader from './components/HomeHeader'
-import RecipeTiles from './components/RecipeTiles'
-import AddRecipe from './components/AddRecipe'
+import { Sidebar, HomeHeader, RecipeTiles, AddRecipe } from './allcomponents'
 
 export default function AllRecipes() {
     return (

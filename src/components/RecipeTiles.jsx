@@ -1,12 +1,13 @@
 
 import { useState } from 'react'
-import RecipeTile from './RecipeTile'
+import { RecipeTile } from '../allcomponents'
 
 export default function RecipeTiles(props) {
     var recipeData = [];
     var [loading, isLoading] = useState(true);
     var [recipes, setRecipes] = useState([]);
 
+    // Use Search Terms and Filters here to get proper data
     if (loading) {
         fetch("/data/recipedata.json")
             .then((response) => response.json())

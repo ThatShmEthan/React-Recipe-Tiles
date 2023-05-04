@@ -1,11 +1,14 @@
+
 import { useState } from 'react'
-import YourRecipeTile from './YourRecipeTile'
+import { YourRecipeTile } from '../allcomponents'
 
 export default function YourRecipeTiles(props) {
     var recipeData = [];
     var [loading, isLoading] = useState(true);
     var [recipes, setRecipes] = useState([]);
+    var username = getCookie('username');
 
+    // Use props.username to lookup recipes by username; doesn't require verification, but requires verification (sending password to server) to edit and delete recipes.
     if (loading) {
         fetch("/data/recipedata.json")
             .then((response) => response.json())

@@ -1,9 +1,5 @@
 
-import Sidebar from './components/Sidebar'
-import HomeHeader from './components/HomeHeader.jsx'
-import RecipeTiles from './components/RecipeTiles'
-import YourRecipeTiles from './components/YourRecipeTiles'
-import AddRecipe from './components/AddRecipe'
+import { Sidebar, HomeHeader, RecipeTiles, YourRecipeTiles, AddRecipe } from './allcomponents'
 
 export default function Home() {
     return (

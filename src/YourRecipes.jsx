@@ -1,7 +1,5 @@
 
-import ExtendedSidebar from './components/ExtendedSidebar'
-import YourRecipeTiles from './components/YourRecipeTiles'
-import AddRecipe from './components/AddRecipe'
+import { ExtendedSidebar, YourRecipeTiles, AddRecipe } from './allcomponents'
 
 export default function YourRecipes() {
     return (
@@ -10,7 +8,7 @@ export default function YourRecipes() {
             <ExtendedSidebar activePage="Your Recipes" />
 
             <div id="main-container" className="extended-main-container">
-                <YourRecipeTiles />
+                <YourRecipeTiles/>
             </div>
         </>
     );

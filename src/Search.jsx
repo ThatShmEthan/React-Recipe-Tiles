@@ -1,10 +1,16 @@
 
-import Sidebar from './components/Sidebar'
-import HomeHeader from './components/HomeHeader.jsx'
-import RecipeTiles from './components/RecipeTiles'
-import AddRecipe from './components/AddRecipe'
+import React from 'react'
+import { BrowserRouter, useLocation } from 'react-router-dom'
+import { Sidebar, HomeHeader, RecipeTiles, AddRecipe } from './allcomponents'
 
 export default function Search() {
+    function useQuery() {
+        const { search } = useLocation;
+        return React.useMemo(() => new URLSearchParams(search), [search]);
+    }
+
+    var query = useQuery();
+
     return (
         <>
             <AddRecipe></AddRecipe>
