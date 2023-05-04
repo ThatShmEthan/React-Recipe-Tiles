@@ -1,6 +1,6 @@
 
 import '/styles/login-style.css';
-import { BrowserRouter, Route, Link, useParams } from 'react-router-dom'
+import { BrowserRouter, Route, Link, useParams, redirect } from 'react-router-dom'
 
 export default function Login() {
     return (
@@ -16,17 +16,22 @@ export default function Login() {
                         <h1>Login</h1>
                         <div className="login-first-input">
                             <img src="/images/username.png" alt="" className="credential-icon" />
-                            <input type="text" placeholder="Username" className="credential-field" />
+                            <input id='username-input' type="text" placeholder="Username" className="credential-field" />
                         </div>
                         <div className="login-second-input">
                             <img src="/images/password.png" alt="" className="credential-icon" />
-                            <input type="password" placeholder="Password" className="credential-field" />
+                            <input id='password-input' type="password" placeholder="Password" className="credential-field" />
                         </div>
                         <div className="login-button-container">
-                            <button className="login-button">Login</button>
+                            <button className="login-button" onClick={
+                                () => login(document.getElementById('username-input').value, document.getElementById('password-input').value) && redirect('/')
+                            }>Login</button>
                         </div>
                         <div className="login-link-container">
                             <Link to="/signup" className="login-link">Sign Up</Link>
+                            <div className="login-skip-link">
+                                <Link to="/">Skip for Now</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

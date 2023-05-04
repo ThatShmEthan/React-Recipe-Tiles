@@ -24,9 +24,16 @@ export default function HomeHeader(props) {
                     <div></div>
                 </div>
             </div>
-            <Link className="signup-icon-link" to="/signup">
-                <button className="header-login-icon" style={{ display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'none')) || 'block') }}>Sign Up</button>
-            </Link>
+            <div className='header-login-container'>
+                <img className="header-login-icon" src="/images/person-icon.png" onClick = { () => showLoginMenu() }
+                    style={{
+                        cursor: 'pointer',
+                        display: ((getCookie('username') && ((getCookie('username').toLowerCase() != 'anon') && 'none')) || 'block')
+                    }}></img>
+                <div id="header-login-dropdown" style={{ display: 'none' }}>
+                    <Link className="signup-icon-link" to="/signup"></Link>
+                </div>
+            </div>
         </div>
     );
 }
