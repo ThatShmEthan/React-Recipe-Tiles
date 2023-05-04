@@ -18,7 +18,12 @@ export default function Search() {
             <Sidebar activePage="Search"></Sidebar>
 
             <div id="main-container" className="main-container">
-                <RecipeTiles />
+                <RecipeTiles filters={[
+                    {
+                        property: "name",
+                        value: document.location.href.match(/(?<=\?)[A-Za-z]+/)[0]
+                    }
+                ]} />
             </div>
         </>
     );

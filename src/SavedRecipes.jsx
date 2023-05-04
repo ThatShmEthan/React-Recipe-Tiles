@@ -9,7 +9,7 @@ export default function SavedRecipes() {
             <Sidebar activePage="Saved Recipes"></Sidebar>
 
             <div id="main-container" className="main-container">
-                <RecipeTiles />
+                <RecipeTiles favorites={ true }/>
             </div>
 
         </>

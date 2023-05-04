@@ -249,12 +249,19 @@ function uploadRecipe(id = 0) {
     }
 }
 
+function getSearch() {
+    if (document.getElementById('search-box')) {
+        return document.getElementById('search-box').value;
+    }
+}
+
 
 // THE BELOW FUNCTIONS ARE LOGIN FUNCTIONALITY. NEEDS SQL CONNECTION.
-function login(username, password) {
-    if (validateLogin(username, password)) {
+async function login(username, password) {
+    if (await validateLogin(username, password)) {
         setCookie('username', username, 2600000);
         setCookie('password', password, 2600000);
+        document.location.href = '/';
         return true;
     } else {
         alert('Unable to log in.');
@@ -262,7 +269,7 @@ function login(username, password) {
     }
 }
 
-function signup(username, pass1, pass2) {
+async function signup(username, pass1, pass2) {
     if (pass1 != pass2) {
         alert('Passwords do not match.');
         return false;
@@ -271,11 +278,28 @@ function signup(username, pass1, pass2) {
         alert('Please enter a username.');
         return false;
     }
-    // Send info to server
-    // If statement will contain result
-    if (username && password) {
+    if (!pass1) {
+        alert('Please enter a password.');
+        return false;
+    }
+
+    if (!(await checkUser(username))) {
+        // This would work in API
+        await fetch("/data/userdata.json", {
+            method: "POST",
+            body: JSON.stringify({
+                'username': username,
+                'password': pass1,
+                favorites: []
+            })
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                data.userdata.push({ 'username': username, 'password': pass1, favorites: [] });
+            });
         setCookie('username', username, 2600000);
-        setCookie('password', password, 2600000);
+        setCookie('password', pass1, 2600000);
+        document.location.href = '/';
         return true;
     } else {
         alert('Unable to sign up.');
@@ -283,12 +307,28 @@ function signup(username, pass1, pass2) {
     }
 }
 
-function validateLogin(username = getCookie('username'), password = getCookie('password')) {
-    if (username && password) { // SQL HERE, SEND INFO TO SERVER, HANDLE RETURN VALUE
-        return true;
-    } else {
-        return false;
-    }
+async function validateLogin(username = getCookie('username'), password = getCookie('password')) {
+    return await fetch("/data/userdata.json")
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.userdata.filter(user => user.username == username && user.password == password)[0]) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+}
+
+async function checkUser(username = getCookie('username')) {
+    return await fetch("/data/userdata.json")
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.userdata.filter(user => user.username == username)[0]) {
+                return true;
+            } else {
+                return false;
+            }
+        });
 }
 
 function logout() {
@@ -297,8 +337,9 @@ function logout() {
 }
 
 // Returns true if the login is valid, or false if it is not. Used before changing any data in the database.
-function checkCredentials(username = getCookie('username'), password = getCookie('password')) {
-    if (username && password) { // SEND SQL REQUEST HERE
+async function checkCredentials(username = getCookie('username'), password = getCookie('password')) {
+
+    if (validateLogin(username, password)) {
         console.log("Logged In");
         return true;
     } else {

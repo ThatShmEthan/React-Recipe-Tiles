@@ -15,11 +15,11 @@ export default function HomeHeader(props) {
                     <p>Filter</p>
                 </button>
                 <input type="search" id="search-box" className="search-box" placeholder="Search..." />
-                <Link id="search-anchor" to="/search">
-                    <button id="search-button" className="search-button"> { /*onClick={() => search(encodeURIComponent(document.getElementById('search-box').value).replace('%20', '+'))}*/}
+                {/*<Link id="search-anchor" to={"/search?" + getSearch() }>*/}
+                <button id="search-button" className="search-button" onClick={() => document.location.href = '/search?' + getSearch() }> { /*onClick={() => search(encodeURIComponent(document.getElementById('search-box').value).replace('%20', '+'))}*/}
                         <p>🔍</p>
                     </button>
-                </Link>
+                {/*</Link>*/}
                 <div id="filter-dropdown" style={{ display: 'none' }}>
                     <div></div>
                 </div>

@@ -14,7 +14,7 @@ export default function YourRecipeTiles(props) {
             .then((response) => response.json())
             .then((data) => {
                 recipeData = data.recipedata;
-                setRecipes(recipeData.map(recipeInfo =>
+                setRecipes(recipeData.filter(recipeInfo => recipeInfo.chef == username).map(recipeInfo =>
                     <YourRecipeTile key={recipeInfo.id} recipeInfo={{
                         id: recipeInfo.id,
                         name: recipeInfo.name || "",
@@ -37,7 +37,7 @@ export default function YourRecipeTiles(props) {
 
     return (
         <div id="your-recipes" className={props.homeClass}>
-            {recipes}
+            { recipes }
         </div>
     );
 }

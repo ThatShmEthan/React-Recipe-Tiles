@@ -13,6 +13,13 @@ export default function RecipeTiles(props) {
             .then((response) => response.json())
             .then((data) => {
                 recipeData = data.recipedata;
+                if (props.favorites) {
+                    recipeData = recipeData.filter((recipe) => recipe['id'].includes('100000001'));
+                }
+                if (props.filters) {
+                    props.filters.forEach((filt) => { console.log(props.filters); recipeData = recipeData.filter((recipe) => recipe[filt.property].includes(filt.value))
+                    });
+                }
                 setRecipes(recipeData.map(recipeInfo =>
                     <RecipeTile key={recipeInfo.id} recipeInfo={{
                         id: recipeInfo.id,

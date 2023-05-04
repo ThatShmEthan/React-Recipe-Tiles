@@ -1,0 +1,14 @@
+{
+  "userdata": [
+    {
+      "username": "User",
+      "password": "Password",
+      "favorites": [ 100000001 ]
+    },
+    {
+      "username": "User2",
+      "password": "Password",
+      "favorites": [ 100000001 ]
+    }
+  ]
+}

@@ -11,6 +11,21 @@
     --rating-background-color: #877417;
 }
 
+/*:root {
+    --background-color: #ffffff;
+    --main-theme-color: rgba(30, 53, 113, 0.55);
+    --secondary-theme-color: rgba(30, 53, 113, 0.55);
+    --main-text-color: #000000;
+    --secondary-text-color: #ffffff;
+    --main-outline-color: rgba(30, 53, 113, 0.55);
+    --highlight-color: #ffffff;
+    --timer-done-color: #aa0000;
+    --rating-color: #ffdc2e;
+    --rating-background-color: #877417;
+    --font-family-Fira: "Fira Sans";
+    --font-family-PT: "PT Serif";
+}*/
+
 html {
     height: 100%;
     width: 100%;

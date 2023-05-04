@@ -24,7 +24,7 @@ export default function Login() {
                         </div>
                         <div className="login-button-container">
                             <button className="login-button" onClick={
-                                () => login(document.getElementById('username-input').value, document.getElementById('password-input').value) && (document.location.href = '/')
+                                () => login(document.getElementById('username-input').value, document.getElementById('password-input').value)
                             }>Login</button>
                         </div>
                         <div className="login-link-container">
