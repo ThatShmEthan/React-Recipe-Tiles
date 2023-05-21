@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\data",
+    "\\images",
+    "\\scripts",
     "\\src",
     "\\src\\components",
     "\\styles"
   ],
-  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
